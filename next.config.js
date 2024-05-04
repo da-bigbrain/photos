@@ -10,6 +10,6 @@ module.exports = {
       },
     ],
   },
-  // output: "export",
-  output: "standalone",
+  output: "export",
+  // output: "standalone",
 };
