@@ -29,6 +29,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Github Secret for Cloudinary
+        run: echo ${{ secrets.CLOUDINARY_FOLDER }} >> $GITHUB_ENV
+        env:
+          NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME }}
+          CLOUDINARY_API_KEY: ${{ secrets.CLOUDINARY_API_KEY }}
+          CLOUDINARY_API_SECRET: ${{ secrets.CLOUDINARY_API_SECRET }}
+          CLOUDINARY_FOLDER: ${{ secrets.CLOUDINARY_FOLDER }}
       - name: Checkout
         uses: actions/checkout@v4
       - name: Detect package manager
@@ -48,12 +55,6 @@ jobs:
             echo "Unable to determine package manager"
             exit 1
           fi
-
-        env:
-          NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME }}
-          CLOUDINARY_API_KEY: ${{ secrets.CLOUDINARY_API_KEY }}
-          CLOUDINARY_API_SECRET: ${{ secrets.CLOUDINARY_API_SECRET }}
-          CLOUDINARY_FOLDER: ${{ secrets.CLOUDINARY_FOLDER }}
 
       - name: Print CLOUDINARY_FOLDER
         run: |
