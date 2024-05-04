@@ -2,7 +2,7 @@
 
 We are the Neuroscience Club at De Anza College. Our research focuses on electroencephalograms (EEG) with the aim to enhance accessibility for disabled individuals. Our projects include innovative applications such as driving a car using brain waves.
 
-![Alt Text](./web.png)
+![Alt Text](./public/web.png)
 
 ## Photo Gallery Website
 
