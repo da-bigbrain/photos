@@ -59,6 +59,14 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
               We're doing research neuroscience as a club at De Anza
             </p>
             <a
+              className="pointer text-md z-10 mt-6 rounded-lg border border-white bg-white px-3 py-2 font-semibold text-black transition hover:bg-white/10 hover:text-white md:mt-4"
+              href="https://da-bigbrain.github.io/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Back to Main Website
+            </a>
+            <a
               className="pointer z-10 mt-6 rounded-lg border border-white bg-white px-3 py-2 text-sm font-semibold text-black transition hover:bg-white/10 hover:text-white md:mt-4"
               href="mailto:dabigbrain24@gmail.com"
               target="_blank"
