@@ -29,13 +29,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Github Secret for Cloudinary
-        run: echo "Github Secret for Cloudinary"
-        env:
-          NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME }}
-          CLOUDINARY_API_KEY: ${{ secrets.CLOUDINARY_API_KEY }}
-          CLOUDINARY_API_SECRET: ${{ secrets.CLOUDINARY_API_SECRET }}
-          CLOUDINARY_FOLDER: ${{ secrets.CLOUDINARY_FOLDER }}
       - name: Checkout
         uses: actions/checkout@v4
       - name: Detect package manager
@@ -55,14 +48,6 @@ jobs:
             echo "Unable to determine package manager"
             exit 1
           fi
-
-      - name: Print CLOUDINARY_FOLDER
-        run: |
-          export NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=$NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME
-          export CLOUDINARY_API_KEY=$CLOUDINARY_API_KEY
-          export CLOUDINARY_API_SECRET=$CLOUDINARY_API_SECRET
-          export CLOUDINARY_FOLDER=$CLOUDINARY_FOLDER
-          echo $CLOUDINARY_FOLDER
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -108,3 +93,11 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        env:
+          NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME }}
+          CLOUDINARY_API_KEY: ${{ secrets.CLOUDINARY_API_KEY }}
+          CLOUDINARY_API_SECRET: ${{ secrets.CLOUDINARY_API_SECRET }}
+          CLOUDINARY_FOLDER: ${{ secrets.CLOUDINARY_FOLDER }}
+      - name: Checking up SECRETS from github-pages
+        run: |
+          echo ${{ secrets.CLOUDINARY_FOLDER }}
