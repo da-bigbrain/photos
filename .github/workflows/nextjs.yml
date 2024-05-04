@@ -48,14 +48,12 @@ jobs:
             echo "Unable to determine package manager"
             exit 1
           fi
-        env:
-          NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME }}
-          CLOUDINARY_API_KEY: ${{ secrets.CLOUDINARY_API_KEY }}
-          CLOUDINARY_API_SECRET: ${{ secrets.CLOUDINARY_API_SECRET }}
-          CLOUDINARY_FOLDER: ${{ secrets.CLOUDINARY_FOLDER }}
-      - name: Checking up SECRETS from github-pages
+      - name: GITHUB SERCETS SETUP
         run: |
-          echo ${{ secrets.CLOUDINARY_FOLDER }}
+          echo ${{ secrets.CLOUDINARY_FOLDER }} >> $GITHUB_ENV
+          echo ${{ secrets.CLOUDINARY_API_KEY }} >> $GITHUB_ENV
+          echo ${{ secrets.CLOUDINARY_API_SECRET }} >> $GITHUB_ENV
+          echo ${{ secrets.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME }} >> $GITHUB_ENV
 
       - name: Setup Node
         uses: actions/setup-node@v4
