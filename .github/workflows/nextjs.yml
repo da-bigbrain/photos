@@ -53,9 +53,9 @@ jobs:
             CLOUDINARY_API_KEY: ${{ secrets.CLOUDINARY_API_KEY }}
             CLOUDINARY_API_SECRET: ${{ secrets.CLOUDINARY_API_SECRET }}
             CLOUDINARY_FOLDER: ${{ secrets.CLOUDINARY_FOLDER }}
-          name: Print CLOUDINARY_FOLDER
-            run: echo $CLOUDINARY_FOLDER
 
+      - name: Print CLOUDINARY_FOLDER
+        run: echo $CLOUDINARY_FOLDER
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
