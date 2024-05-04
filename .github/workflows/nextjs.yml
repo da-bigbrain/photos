@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Github Secret for Cloudinary
-        run: echo ${{ secrets.CLOUDINARY_FOLDER }} >> $GITHUB_ENV
+        run: echo "Github Secret for Cloudinary"
         env:
           NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME }}
           CLOUDINARY_API_KEY: ${{ secrets.CLOUDINARY_API_KEY }}
