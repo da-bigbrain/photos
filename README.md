@@ -10,4 +10,4 @@ This website serves as a photo gallery showcasing our project timeline and photo
 
 Feel free to explore and learn more about our work
 
-Last update: Oct 17, 2024
+Last update: Oct 18, 2024
